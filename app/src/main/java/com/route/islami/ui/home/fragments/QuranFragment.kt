@@ -1,12 +1,16 @@
 package com.route.islami.ui.home.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.route.islami.Constants
+import com.route.islami.R
 import com.route.islami.Sura
+import com.route.islami.ui.suraDetails.SuraDetailsActivity
 
 class QuranFragment : Fragment() {
     val names = listOf<String>(
@@ -138,10 +142,27 @@ class QuranFragment : Fragment() {
     lateinit var adapter: SuraNamesAdapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView = view.findViewById(R.id.reycler_view);
+        initRecyclerView()
+    }
+
+    fun initRecyclerView() {
+        recyclerView = requireView().findViewById(R.id.reycler_view);
         adapter = SuraNamesAdapter(getSurasList())
 
+        adapter.onItemClickListener = object : SuraNamesAdapter.OnItemClickListener {
+            override fun onItemClick(position: Int, item: Sura) {
+                showSuraDetails(position, item);
+            }
+        }
         recyclerView.adapter = adapter
+    }
+
+    private fun showSuraDetails(position: Int, sura: Sura) {
+        val intent = Intent(requireContext(), SuraDetailsActivity::class.java)
+        intent.putExtra(Constants.EXTRA_SURA_NAME, sura.name)
+        intent.putExtra(Constants.EXTRA_SURA_POS, position)
+        startActivity(intent)
+
     }
 
     fun getSurasList(): List<Sura> {
