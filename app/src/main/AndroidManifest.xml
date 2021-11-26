@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Islami">
         <activity
-            android:name=".home.HomeActivity"
+            android:name=".ui.hadeth.HadethDetailsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.home.HomeActivity"
             android:exported="true"
             android:theme="@style/Theme.Islami.noActionBar" />
         <activity
