@@ -10,7 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Islami">
         <activity
-            android:name=".home.HomeActivity"
+            android:name=".ui.suraDetails.SuraDetailsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_sura_details"
+            android:theme="@style/Theme.Islami.NoActionBar" />
+        <activity
+            android:name=".ui.home.HomeActivity"
             android:exported="true"
             android:theme="@style/Theme.Islami.noActionBar" />
         <activity
