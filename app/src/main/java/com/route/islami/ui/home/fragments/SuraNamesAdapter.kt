@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.route.islami.R
 import com.route.islami.Sura
 
 class SuraNamesAdapter(val suraList: List<Sura>) :

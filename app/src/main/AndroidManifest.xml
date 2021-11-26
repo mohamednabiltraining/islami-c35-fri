@@ -15,6 +15,9 @@
             android:label="@string/title_activity_sura_details"
             android:theme="@style/Theme.Islami.NoActionBar" />
         <activity
+            android:name=".ui.hadeth.HadethDetailsActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.home.HomeActivity"
             android:exported="true"
             android:theme="@style/Theme.Islami.noActionBar" />

@@ -148,6 +148,7 @@ class QuranFragment : Fragment() {
     fun initRecyclerView() {
         recyclerView = requireView().findViewById(R.id.reycler_view);
         adapter = SuraNamesAdapter(getSurasList())
+
         adapter.onItemClickListener = object : SuraNamesAdapter.OnItemClickListener {
             override fun onItemClick(position: Int, item: Sura) {
                 showSuraDetails(position, item);
@@ -167,6 +168,7 @@ class QuranFragment : Fragment() {
     fun getSurasList(): List<Sura> {
         val suraList = names.map {
             return@map Sura(name = it)
+
         }
         return suraList;
 //

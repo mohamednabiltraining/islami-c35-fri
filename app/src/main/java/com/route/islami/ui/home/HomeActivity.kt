@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationBarView
 import com.route.islami.R
 import com.route.islami.ui.home.fragments.HadethFragment
 import com.route.islami.ui.home.fragments.QuranFragment
