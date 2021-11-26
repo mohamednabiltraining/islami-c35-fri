@@ -1,4 +1,4 @@
-package com.route.islami.home.fragments
+package com.route.islami.ui.home.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import com.route.islami.R
 import com.route.islami.Sura
 
 class QuranFragment : Fragment() {
@@ -141,12 +140,14 @@ class QuranFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.reycler_view);
         adapter = SuraNamesAdapter(getSurasList())
+
         recyclerView.adapter = adapter
     }
 
     fun getSurasList(): List<Sura> {
         val suraList = names.map {
             return@map Sura(name = it)
+
         }
         return suraList;
 //
